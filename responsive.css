@@ -1,0 +1,130 @@
+
+/* === Responsive Enhancements (added by assistant) === */
+
+/* Base fluid elements */
+img, video, canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Make the top nav adaptive */
+.navBar {
+  flex-wrap: wrap;
+  height: auto;
+  padding: 8px 10px;
+  gap: 8px;
+}
+.logoSection, .searchBox, .loginBox, .becomeSellerBox, .moreBox, .cartBox {
+  margin-right: 0;
+}
+
+/* Search should stretch nicely */
+.searchBox {
+  flex: 1 1 420px;
+  display: flex;
+}
+.searchBox input {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Category strip below navbar should wrap and/or scroll on very small screens */
+.belowNavBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 8px 10px;
+}
+.menuItem, .belowItem {
+  flex: 0 1 auto;
+}
+
+/* Product grids become auto-fit */
+.itemSection, .product-grid, .product-list, .cards, .grid, [class*="grid"], [class*="cards"], [class*="products"] {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+/* Card sizing */
+.card, .smallCard, .itemBox {
+  min-width: 0;
+}
+
+/* Footer becomes column layout on mobile */
+.footerSection, .footerSec tion { /* the original CSS had a split selector; handle both */
+  padding: 16px 12px;
+}
+.footerSection, .footerSec tion,
+.footerContent, .footerLeft, .footerRight, .footerInfo, .footerExtras {
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footerLeft, .footerRight {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+/* Utility container for breathing room */
+.container, [class*="container"] {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 12px;
+}
+
+/* Tables scroll horizontally if needed */
+.table-responsive {
+  overflow-x: auto;
+}
+.table-responsive > table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Banners / hero */
+.hero, [class*="banner"] {
+  background-position: center;
+  background-size: cover;
+}
+
+/* Typography scales a bit on small devices */
+html {
+  font-size: 16px;
+}
+
+/* Breakpoints */
+@media (max-width: 1024px) {
+  .becomeSellerBox { display: none; }
+  .moreBox { display: none; }
+}
+
+@media (max-width: 768px) {
+  .navBar {
+    justify-content: space-between;
+  }
+  .logoSection {
+    order: 1;
+  }
+  .searchBox {
+    order: 3;
+    flex: 1 1 100%;
+  }
+  .loginBox, .cartBox {
+    order: 2;
+  }
+  .belowNavBar {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+  .belowNavBar::-webkit-scrollbar {
+    height: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login { padding: 6px 16px; }
+  .cartBox { width: auto; }
+  .viewAllSection { padding: 0 8px; }
+  .footerExtras { font-size: 12px; padding-left: 12px; padding-right: 12px; }
+}
