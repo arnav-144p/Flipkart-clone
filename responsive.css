@@ -36,6 +36,7 @@ img, video, canvas {
   gap: 12px;
   padding: 8px 10px;
 }
+
 .menuItem, .belowItem {
   flex: 0 1 auto;
 }
