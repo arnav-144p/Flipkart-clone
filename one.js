@@ -48,6 +48,7 @@ fashion: [
 // Application State
 class AppState {
     constructor() {
+        
         this.cart = [];
         this.user = null;
         this.currentSlide = 0;
